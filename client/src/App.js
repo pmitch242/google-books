@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Search from '.'
+import Search from './pages/Search';
+import Library from './pages/Library';
 
 function App() {
   return (
@@ -9,14 +10,12 @@ function App() {
       <Router>
         <div>
           <Route exact path={['/', '/search']}>
-
+            <Search />
           </Route>
           <Route exact path={['/library']}>
-
+            <Library />
           </Route>
-          <Route >
-
-          </Route>
+          {/* <Route ></Route> */}
         </div>
       </Router>
     </Switch>
