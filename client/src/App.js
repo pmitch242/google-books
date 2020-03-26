@@ -6,19 +6,21 @@ import Library from './pages/Library';
 
 function App() {
   return (
-    <Switch>
-      <Router>
-        <div>
+    <Router>
+      <div>
+        <Switch>
           <Route exact path={['/', '/search']}>
             <Search />
           </Route>
           <Route exact path={['/library']}>
             <Library />
           </Route>
-          {/* <Route ></Route> */}
-        </div>
-      </Router>
-    </Switch>
+          <Route >
+            <h1>No page found</h1>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
