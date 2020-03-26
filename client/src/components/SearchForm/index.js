@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import Form from 'react-bootstrap/Form';
+import { Form, Button } from 'react-bootstrap';
 import './style.css';
 
 class SearchForm extends Component {
     render() {
         return (
-            <Form.Group>
-                <Form.Control type="text" placeholder="Normal text" />
-            </Form.Group>
+            <div>
+                <Form.Group>
+                    <Form.Control type="text" placeholder="Search Book" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Search
+                </Button>
+            </div>
         )
     }
 }

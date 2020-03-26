@@ -7,7 +7,6 @@ class Search extends Component {
         return (
             <div>
                 <Container>
-                    <h1>In Search</h1>
                     <SearchForm />
                 </Container>
             </div>
