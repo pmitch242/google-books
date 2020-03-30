@@ -4,7 +4,10 @@ import './style.css';
 
 class BookCard extends Component {
 
-    handle
+    handleSave = (event) => {
+        event.preventDefault();
+        console.log('I was hit!');
+    }
     render() {
         return (
             <Container>
@@ -19,7 +22,7 @@ class BookCard extends Component {
                                 <Card.Subtitle className="mb-2 text-muted">Written By: {this.props.authors}</Card.Subtitle>
                                 <Card.Text>{this.props.description}</Card.Text>
                                 <Card.Link href={this.props.link}>View</Card.Link>
-                                <Card.Link href="#">Save</Card.Link>
+                                <Card.Link onClick={this.handleSave} className='save-btn'>Save</Card.Link>
                             </Card.Body>
                         </Card>
                     </Col>
