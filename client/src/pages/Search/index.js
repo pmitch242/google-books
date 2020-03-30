@@ -9,23 +9,33 @@ import API from '../../utils/API'
 class Search extends Component {
     state = {
         results: [],
-        search: ''
+        search: '',
+        lastSearch: localStorage.getItem('lastSearch')
+    }
+
+    componentDidMount(){
+        console.log('This is the last search: ', this.state.lastSearch)
+        this.getBooks(this.state.lastSearch);
     }
 
     handleInputChange = (event) => {
         this.setState({ search: event.target.value })
     }
 
+    getBooks = (search) =>{
+        API.google(search)
+        .then(res => {
+            this.setState({
+                search: '',
+                results: res.data.items,
+            })
+        })
+    }
+
     handleSubmit = event => {
         event.preventDefault();
-        API.google(this.state.search)
-            .then(res => {
-                this.setState({
-                    search: '',
-                    results: res.data.items,
-                })
-            })
-            console.log(this.state)
+        localStorage.setItem("lastSearch", this.state.search);
+        this.getBooks(this.state.search);
     }
 
     render() {
