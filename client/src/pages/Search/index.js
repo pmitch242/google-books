@@ -14,7 +14,6 @@ class Search extends Component {
     }
 
     componentDidMount(){
-        console.log('This is the last search: ', this.state.lastSearch)
         this.getBooks(this.state.lastSearch);
     }
 
@@ -46,9 +45,11 @@ class Search extends Component {
             let info = book.volumeInfo;
             return < BookCard 
             key ={book.id}
+            id={book.id}
             image={info.imageLinks.thumbnail}
             title={info.title}
             authors={info.authors}
+            option='Save'
             description={
                 !book.searchInfo?.textSnippet ? 
                 ("No description provided...") : 

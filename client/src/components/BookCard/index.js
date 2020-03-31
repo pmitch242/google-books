@@ -7,14 +7,15 @@ class BookCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            option: this.props.option,
             book: {
                 title: this.props.title,
                 image: this.props.image,
                 authors: this.props.authors,
                 description: this.props.description,
                 link: this.props.link,
+                bookId: this.props.id
             },
-            save: 'Save'
         }
     }
 
@@ -22,17 +23,33 @@ class BookCard extends Component {
         API.saveBook(this.state.book)
             .then(res => {
                 this.setState({
-                    save: ''
+                    option: ''
                 })
             })
             .catch(err => {
-                console.log(err);
+                this.setState({
+                    option: ''
+                })
             })
+    }
+
+    handleDelete = () => {
+        API.deleteBook(this.state.book.bookId)
+            .then(res =>{
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }
+
+    handleOption = () =>{
+        this.state.option === 'Save' ? this.handleSave() : this.handleDelete();
     }
 
     render() {
         return (
-            <Container>
+            <Container >
                 <Row>
                     <Col>
                         <img src={this.props.image} alt='Book Image' />
@@ -44,7 +61,7 @@ class BookCard extends Component {
                                 <Card.Subtitle className="mb-2 text-muted">Written By: {this.props.authors}</Card.Subtitle>
                                 <Card.Text>{this.props.description}</Card.Text>
                                 <Card.Link href={this.props.link}>View</Card.Link>
-                                <Card.Link onClick={this.handleSave} className='save-btn'>{this.state.save}</Card.Link>
+                                <Card.Link onClick={this.handleOption} className='save-btn'>{this.state.option}</Card.Link>
                             </Card.Body>
                         </Card>
                     </Col>
