@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ShelfPreview from '../../components/ShelfPreview';
 import API from '../../utils/API';
 
 import './style.css';
@@ -56,7 +57,8 @@ class Search extends Component {
         // })
 
         return (
-            <div>
+            <div className='dashboard'>
+                <ShelfPreview />
             </div>
         )
     }
