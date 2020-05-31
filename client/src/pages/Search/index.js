@@ -7,6 +7,10 @@ import './style.css';
 
 
 class Search extends Component {
+    style = {
+        marginTop: '20px'
+    }
+
     state = {
         results: [],
         search: '',
@@ -57,7 +61,7 @@ class Search extends Component {
         // })
 
         return (
-            <div className='dashboard'>
+            <div style={this.style} className='dashboard'>
                 <ShelfPreview />
             </div>
         )
