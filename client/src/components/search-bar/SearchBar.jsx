@@ -30,6 +30,7 @@ export default function SearchBar() {
             color: '#1a4cb1'
         }
     }
+    
     return (
 
         <div className='search-bar-div'>
