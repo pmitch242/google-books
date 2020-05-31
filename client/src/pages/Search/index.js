@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
-import { Form, Button } from 'react-bootstrap';
-import './style.css'
+
+import SearchBar from '../../components/SearchBar'
 import BookCard from '../../components/BookCard'
+
 import API from '../../utils/API'
+
+import './style.css'
 
 
 class Search extends Component {
@@ -13,7 +16,7 @@ class Search extends Component {
         lastSearch: localStorage.getItem('lastSearch')
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.getBooks(this.state.lastSearch);
     }
 
@@ -21,14 +24,14 @@ class Search extends Component {
         this.setState({ search: event.target.value })
     }
 
-    getBooks = (search) =>{
+    getBooks = (search) => {
         API.google(search)
-        .then(res => {
-            this.setState({
-                search: '',
-                results: res.data.items,
+            .then(res => {
+                this.setState({
+                    search: '',
+                    results: res.data.items,
+                })
             })
-        })
     }
 
     handleSubmit = event => {
@@ -43,36 +46,27 @@ class Search extends Component {
         }
         let card = this.state.results.map((book) => {
             let info = book.volumeInfo;
-            return < BookCard 
-            key ={book.id}
-            id={book.id}
-            image={info.imageLinks.thumbnail}
-            title={info.title}
-            authors={info.authors}
-            option='Save'
-            description={
-                !book.searchInfo?.textSnippet ? 
-                ("No description provided...") : 
-                (book.searchInfo.textSnippet)
-            }
-            link={info.infoLink}
-        />
+            return < BookCard
+                key={book.id}
+                id={book.id}
+                image={info.imageLinks.thumbnail}
+                title={info.title}
+                authors={info.authors}
+                option='Save'
+                description={
+                    !book.searchInfo?.textSnippet ?
+                        ("No description provided...") :
+                        (book.searchInfo.textSnippet)
+                }
+                link={info.infoLink}
+            />
         })
-        
+
         return (
-            <div>
-                <Container>
-                    <Form>
-                        <Form.Group>
-                            <Form.Control value={this.state.search} onChange={this.handleInputChange} name='search' type="text" placeholder="Search Book" />
-                        </Form.Group>
-                        <Button disabled={!this.state.search} onClick={this.handleSubmit} className={className.button} variant="primary" type="submit">
-                            Search
-                        </Button>
-                    </Form>
-                    {card}
-                </Container>
-            </div>
+            <Container>
+                <SearchBar />
+                {/* {card} */}
+            </Container>
         )
     }
 }
