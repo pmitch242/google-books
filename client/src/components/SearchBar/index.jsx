@@ -29,6 +29,7 @@ export default function SearchBar() {
             width: '92%',
         },
         icon: {
+            fontSize: '20px',
             float: 'right',
             color: '#1a4cb1',
             clear: 'both',
