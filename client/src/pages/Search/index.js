@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SearchBar from '../../components/search-bar/SearchBar';
+import SearchBar from '../../components/SearchBar';
 
 import API from '../../utils/API';
 

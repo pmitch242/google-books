@@ -18,8 +18,6 @@ export default function SearchBar() {
             backgroundColor: '#f3f5f9',
             padding: '10px',
             boxShadow: '0px 5px 10px 0px rgba(0,0,0,0.12)',
-
-
         },
         searchBarInput: {
             border: 'none',
