@@ -1,17 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import TopNav from './components/TopNav'
-import Jumbo from './components/Jumbo'
+
 import Search from './pages/Search';
 import Library from './pages/Library';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
       <div>
-        <TopNav />
-        <Jumbo />
         <Switch>
           <Route exact path={['/', '/search']}>
             <Search />

@@ -52,7 +52,7 @@ class BookCard extends Component {
             <Container >
                 <Row>
                     <Col>
-                        <img src={this.props.image} alt='Book Image' />
+                        <img src={this.props.image} alt='Book' />
                     </Col>
                     <Col xs={10}>
                         <Card>
