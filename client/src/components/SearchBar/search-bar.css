@@ -1,0 +1,11 @@
+#search-input:focus{
+    outline: none;
+}
+
+.search-inactive{
+    padding-bottom: 0px;
+}
+
+.search-active{
+    padding-bottom: 7px;
+}

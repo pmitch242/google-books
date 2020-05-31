@@ -8,7 +8,7 @@ const SearchBarList = () => {
     const style = {
         backgroundColor: 'transparent',
         border: 'none',
-        borderTop: '3px solid rgba(0,0,0,.125)',
+        borderTop: '1px solid rgba(0,0,0,.125)',
         borderRadius: '0',
     }
 

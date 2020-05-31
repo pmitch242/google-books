@@ -8,16 +8,19 @@ import SearchBarList from './SearchBarList';
 import './search-bar.css';
 
 export default function SearchBar() {
+    // states
+    const [toggleDisplay, setToggleDisplay] = useState(false);
 
+    // styling
     const style = {
         searchBarDiv: {
 
         },
         searchBar: {
             border: 'none',
-            borderRadius: '30px',
+            borderRadius: '20px',
             backgroundColor: '#f3f5f9',
-            padding: '15px 25px',
+            padding: '15px 20px',
             boxShadow: '0px 5px 10px 0px rgba(0,0,0,0.12)',
         },
         searchBarInput: {
@@ -36,10 +39,17 @@ export default function SearchBar() {
 
         <div className='search-bar-div'>
             <form style={style.searchBar} className='search-bar'>
-                <input type="text" id="search-input" name="search-input" placeholder='Search by author, title...' style={style.searchBarInput} />
+                <input
+                    type="text"
+                    id="search-input"
+                    name="search-input"
+                    placeholder='Search by author, title...'
+                    style={style.searchBarInput}
+                    className={toggleDisplay ? 'search-active' : 'search-inactive'}
+                />
                 <FontAwesomeIcon icon={faSearch} style={style.icon} className='search-bar-icon' />
-                
-                <SearchBarList />
+
+                {toggleDisplay && <SearchBarList />}
             </form>
         </div>
     )
