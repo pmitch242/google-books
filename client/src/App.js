@@ -5,23 +5,30 @@ import Container from 'react-bootstrap/Container';
 import Search from './pages/Search';
 import Library from './pages/Library';
 
+import SearchBar from './components/SearchBar';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Router>
-      <Container style={{padding: '15px'}}>
+      <Container style={{ padding: '15px' }}>
+        <SearchBar />
+
         <Switch>
           <Route exact path={['/', '/search']}>
             <Search />
           </Route>
+
           <Route exact path={['/library']}>
             <Library />
           </Route>
+
           <Route >
             <h1>No page found</h1>
           </Route>
         </Switch>
+
       </Container>
     </Router>
   )

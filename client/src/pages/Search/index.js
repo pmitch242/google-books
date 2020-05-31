@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-import SearchBar from '../../components/SearchBar';
-
 import API from '../../utils/API';
 
 import './style.css';
@@ -59,8 +57,6 @@ class Search extends Component {
 
         return (
             <div>
-                <SearchBar />
-                {/* {card} */}
             </div>
         )
     }
