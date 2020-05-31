@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
 
 import Search from './pages/Search';
 import Library from './pages/Library';
@@ -9,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
-      <div>
+      <Container style={{padding: '15px'}}>
         <Switch>
           <Route exact path={['/', '/search']}>
             <Search />
@@ -21,7 +22,7 @@ function App() {
             <h1>No page found</h1>
           </Route>
         </Switch>
-      </div>
+      </Container>
     </Router>
   )
 }
