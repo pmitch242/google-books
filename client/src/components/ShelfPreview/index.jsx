@@ -1,7 +1,8 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+import ShelfPreviewList from './ShelfPreviewList';
 
 import './shelf-preview.css';
 
@@ -34,11 +35,14 @@ const ShelfPreview = () => {
         <div style={style.container} className='shelf-preview-div'>
             <div className='title-link-div'>
                 <h3 style={style.h3}>Shelf</h3>
+
                 <div style={style.viewAllDiv}>
                     <span style={style.span}>View all</span>
                     <FontAwesomeIcon icon={faChevronRight} style={style.icon}/>
                 </div>
             </div>
+
+            <ShelfPreviewList />
         </div>
     )
 }
