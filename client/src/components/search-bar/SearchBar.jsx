@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+import SearchBarList from './SearchBarList';
 
 import './search-bar.css';
 
@@ -30,13 +31,15 @@ export default function SearchBar() {
             color: '#1a4cb1'
         }
     }
-    
+
     return (
 
         <div className='search-bar-div'>
             <form style={style.searchBar} className='search-bar'>
-                <FontAwesomeIcon icon={faSearch} style={style.icon} className='search-bar-icon'/>
-                <input type="text" id="search-input" name="search-input" placeholder='Search by author, title...' style={style.searchBarInput}/>
+                <FontAwesomeIcon icon={faSearch} style={style.icon} className='search-bar-icon' />
+                <input type="text" id="search-input" name="search-input" placeholder='Search by author, title...' style={style.searchBarInput} />
+                
+                <SearchBarList />
             </form>
         </div>
     )
