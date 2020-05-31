@@ -8,6 +8,7 @@ import SearchBarList from './SearchBarList';
 import './search-bar.css';
 
 export default function SearchBar() {
+    
     const style = {
         searchBarDiv: {
 

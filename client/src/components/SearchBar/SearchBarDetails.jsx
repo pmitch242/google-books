@@ -1,5 +1,10 @@
 import React from 'react';
 
-export default function temp(){
-    return
+import ListGroup from 'react-bootstrap/ListGroup';
+
+
+const SearchBarDetails = (props) => {
+    return <ListGroup.Item>{props.suggestion}</ListGroup.Item>
 }
+
+export default SearchBarDetails;
