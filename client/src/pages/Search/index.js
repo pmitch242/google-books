@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 
-import SearchBar from '../../components/SearchBar'
+import SearchBar from '../../components/search/SearchBar'
 import BookCard from '../../components/BookCard'
 
 import API from '../../utils/API'

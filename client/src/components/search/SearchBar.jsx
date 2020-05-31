@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 
 
-import './style.css';
+import './search-bar.css';
 
 export default function SearchBar() {
     return (
