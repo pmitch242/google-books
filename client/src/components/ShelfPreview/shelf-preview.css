@@ -1,4 +1,10 @@
 .title-link-div{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.horizontal-scroll{
+    display: flex;
+    overflow-x: auto;
 }

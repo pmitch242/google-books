@@ -32,18 +32,20 @@ const ShelfPreview = () => {
     }
 
     return (
-        <div style={style.container} className='shelf-preview-div'>
-            <div className='title-link-div'>
-                <h3 style={style.h3}>Shelf</h3>
+        // <div className='background-div'>
+            <div style={style.container} className='shelf-preview-div'>
+                <div className='title-link-div'>
+                    <h3 style={style.h3}>Shelf</h3>
 
-                <div style={style.viewAllDiv}>
-                    <span style={style.span}>View all</span>
-                    <FontAwesomeIcon icon={faChevronRight} style={style.icon}/>
+                    <div style={style.viewAllDiv}>
+                        <span style={style.span}>View all</span>
+                        <FontAwesomeIcon icon={faChevronRight} style={style.icon} />
+                    </div>
                 </div>
-            </div>
 
-            <ShelfPreviewList />
-        </div>
+                <ShelfPreviewList />
+            </div>
+        // </div>
     )
 }
 

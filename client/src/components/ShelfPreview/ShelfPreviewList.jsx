@@ -1,15 +1,28 @@
 import React from 'react';
 
+import './shelf-preview.css';
+
 const ShelfPreviewList = () => {
     const style = {
-        img: {},
-        imgDiv: {},
-        img: {},
-
+        img: {
+            width: 'inherit',
+            height: 'inherit',
+            borderRadius: '20px',
+        },
+        imgDiv: {
+            width: '125px',
+            maxWidth: '400px',
+            height: 'auto',
+        },
+        scrollDiv: {
+            marginLeft: '-35px',
+            paddingLeft: '35px',
+            width: '100vw'
+        }
     }
 
     return (
-        <div className='horizontal-scroll'>
+        <div className='horizontal-scroll' style={style.scrollDiv}>
             <div className='image-card' style={style.imgDiv}>
                 <img
                     alt='book'
