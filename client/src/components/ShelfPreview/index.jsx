@@ -12,15 +12,17 @@ const ShelfPreview = () => {
             border: 'none',
             borderRadius: '20px',
             backgroundColor: '#f3f5f9',
-            padding: '15px 20px',
+            padding: '20px',
             boxShadow: '0px 5px 10px 0px rgba(0,0,0,0.12)',
         },
         h3: {
             marginBottom: '0px',
+            fontFamily: `'Noto Serif', serif`,
         },
         viewAllDiv: {
             height: 'fit-content',
             marginTop: 'auto',
+            color: '#de531e',
         },
         span: {
             marginRight: '10px',
