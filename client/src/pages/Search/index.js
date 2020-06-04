@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
+import PopularPreview from '../../components/PopularPreview';
 import ShelfPreview from '../../components/ShelfPreview';
 import API from '../../utils/API';
 
 import './style.css';
-import PopularPreview from '../../components/PopularPreview';
 
 
 class Search extends Component {
