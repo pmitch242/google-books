@@ -4,6 +4,7 @@ import ShelfPreview from '../../components/ShelfPreview';
 import API from '../../utils/API';
 
 import './style.css';
+import PopularPreview from '../../components/PopularPreview';
 
 
 class Search extends Component {
@@ -63,6 +64,7 @@ class Search extends Component {
         return (
             <div style={this.style} className='dashboard'>
                 <ShelfPreview />
+                <PopularPreview />
             </div>
         )
     }
