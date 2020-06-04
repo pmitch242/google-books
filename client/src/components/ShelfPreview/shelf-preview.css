@@ -5,10 +5,5 @@
 }
 
 .shelf-preview-list .image-card{
-    margin-right: 10px;
-}
-
-.horizontal-scroll{
-    display: flex;
-    overflow-x: auto;
+    margin-right: 22px;
 }

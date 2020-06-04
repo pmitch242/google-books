@@ -4,5 +4,14 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #e8e2db;
 }
+
+.horizontal-scroll{
+    display: flex;
+    overflow-x: auto;
+}
+
+.nowrap{
+    white-space: nowrap;
+}
 /* font-family: 'Noto Serif', serif; */
 /* font-family: 'Roboto', sans-serif; */
