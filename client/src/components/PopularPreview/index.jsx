@@ -2,6 +2,7 @@ import React from 'react';
 
 import TitleWithRoute from '../TitleWithRoute';
 import CategoryButtonList from './CategoryButtonList';
+import BookCardList from './BooksCardList';
 
 import './popular-preview.css';
 
@@ -17,6 +18,8 @@ const PopularPreview = () => {
             <TitleWithRoute title='Discover' />
 
             <CategoryButtonList />
+
+            <BookCardList />
         </div>
     )
 }

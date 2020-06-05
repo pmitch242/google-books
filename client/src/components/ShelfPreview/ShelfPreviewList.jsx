@@ -18,29 +18,28 @@ const ShelfPreviewList = () => {
     return (
         <div className='horizontal-scroll shelf-preview-list' style={style.scrollDiv}>
             <ImageCard
-                bookTitle='Finding Moana'
-                imageLink='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
+                title='Finding Moana'
+                image='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
             />
 
             <ImageCard
-                bookTitle='Finding Moana'
-                imageLink='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
+                title='Finding Moana'
+                image='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
             />
 
             <ImageCard
-                bookTitle='Finding Moana'
-                imageLink='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
-            />
-
-
-            <ImageCard
-                bookTitle='Finding Moana'
-                imageLink='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
+                title='Finding Moana'
+                image='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
             />
 
             <ImageCard
-                bookTitle='Finding Moana'
-                imageLink='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
+                title='Finding Moana'
+                image='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
+            />
+
+            <ImageCard
+                title='Finding Moana'
+                image='https://i.pinimg.com/originals/1e/c5/df/1ec5df963765d4bcf151467c99d1dae7.jpg'
             />
 
             <ViewMoreRoundBtn />

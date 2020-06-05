@@ -8,8 +8,6 @@ const ImageCard = (props) => {
             borderRadius: '20px',
         },
         imgDiv: {
-            width: '125px',
-            maxWidth: '400px',
             height: 'auto',
         },
     }
@@ -17,8 +15,8 @@ const ImageCard = (props) => {
     return (
         <div className='image-card' style={style.imgDiv}>
             <img
-                alt={props.bookTitle}
-                src={props.imageLink}
+                alt={props.title}
+                src={props.image}
                 style={style.img}
             />
         </div>

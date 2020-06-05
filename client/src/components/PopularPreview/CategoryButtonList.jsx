@@ -6,6 +6,7 @@ const CategoryButtonList = () => {
     const style = {
         container: {
             marginLeft: '-15px',
+            marginBottom: '15px',
             paddingLeft: '15px',
             width: '100vw'
         }
