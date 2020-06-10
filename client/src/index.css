@@ -3,6 +3,7 @@
 body{
     font-family: 'Roboto', sans-serif;
     background-color: #e8e2db;
+    overflow: hidden;
 }
 
 .horizontal-scroll{

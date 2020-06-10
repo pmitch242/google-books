@@ -6,19 +6,8 @@ import ShelfPreviewList from './ShelfPreviewList';
 import './shelf-preview.css';
 
 const ShelfPreview = () => {
-    const style = {
-        container: {
-            border: 'none',
-            borderRadius: '20px',
-            backgroundColor: '#f3f5f9',
-            padding: '20px',
-            boxShadow: '0px 5px 10px 0px rgba(0,0,0,0.12)',
-            marginBottom: '20px',
-        },
-    }
-
     return (
-            <div style={style.container} className='shelf-preview-div'>
+            <div style={{marginBottom: '20px'}} className='shelf-preview-div'>
                 <TitleWithRoute title='Shelf' />
 
                 <ShelfPreviewList />

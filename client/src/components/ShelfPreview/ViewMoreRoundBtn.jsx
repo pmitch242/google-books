@@ -6,7 +6,7 @@ import { faChevronRight, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 const ViewMoreRoundBtn = () => {
     const style = {
         div: {
-            paddingRight: '35px',
+            paddingRight: '10px',
             marginLeft: '7px',
             color: '#1a4cb1a6',
         },

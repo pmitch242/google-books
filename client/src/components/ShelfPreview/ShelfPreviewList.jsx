@@ -10,7 +10,7 @@ const ShelfPreviewList = () => {
         scrollDiv: {
             marginLeft: '-35px',
             paddingLeft: '35px',
-            width: '100vw',
+            width: '105vw',
             alignItems: 'center',
         },
     }
