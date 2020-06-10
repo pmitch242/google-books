@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 
-import Search from './pages/Search';
-import Library from './pages/Library';
+import Home from './pages/Home';
+import Shelf from './pages/Shelf';
 
 import SearchBar from './components/SearchBar';
 
@@ -16,12 +16,12 @@ function App() {
         <SearchBar />
 
         <Switch>
-          <Route exact path={['/', '/search']}>
-            <Search />
+          <Route exact path={['/', '/home']}>
+            <Home />
           </Route>
 
-          <Route exact path={['/library']}>
-            <Library />
+          <Route exact path={['/shelf']}>
+            <Shelf />
           </Route>
 
           <Route >
