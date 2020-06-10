@@ -15,6 +15,7 @@ const DetailedCard = (props) => {
             borderRadius: '20px',
             padding: '10px',
             boxShadow: '0px 5px 10px 0px rgba(0,0,0,0.12)',
+            marginBottom: '15px',
         },
         h5: {
             fontFamily: `'Noto Serif', serif`,

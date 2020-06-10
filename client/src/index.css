@@ -4,6 +4,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: #e8e2db;
     overflow: hidden;
+    overflow-y: auto;
 }
 
 .horizontal-scroll{
