@@ -6,7 +6,7 @@ const CategoryButton = (props) => {
             padding: '2px 20px',
             borderRadius: '20px',
             color: '#1a4cb1',
-            fontWeight: 'bolder',
+            fontWeight: '500',
             letterSpacing: '1px',
             backgroundColor: '#34afff29',
             marginRight: '10px',
