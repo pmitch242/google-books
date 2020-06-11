@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 import Home from './pages/Home';
 import Shelf from './pages/Shelf';
+import ProjectDetails from './components/BookDetails';
 
 import SearchBar from './components/SearchBar';
 
@@ -16,13 +17,11 @@ function App() {
         <SearchBar />
 
         <Switch>
-          <Route exact path={['/', '/home']}>
-            <Home />
-          </Route>
+          <Route exact path={['/', '/home']} component={ Home } />
 
-          <Route exact path={['/shelf']}>
-            <Shelf />
-          </Route>
+          <Route exact path={['/shelf']} component={ Shelf }/>
+
+          <Route path={['/book/:id']} component={ ProjectDetails } />
 
           <Route >
             <h1>No page found</h1>
