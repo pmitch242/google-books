@@ -3,17 +3,27 @@ import { Card, ListGroup } from 'react-bootstrap';
 
 import SearchBarDetails from './SearchBarDetails';
 
-const SearchBarList = () => {
+const SearchBarList = (props) => {
 
     const style = {
-        backgroundColor: 'transparent',
-        border: 'none',
-        borderTop: '1px solid rgba(0,0,0,.125)',
-        borderRadius: '0',
+        container: {
+            backgroundColor: 'transparent',
+            border: 'none',
+            borderTop: '1px solid rgba(0,0,0,.125)',
+            borderRadius: '0',
+        },
+        hide: {
+            display: 'none',
+        },
     }
 
     return (
-        <Card style={style}>
+        <Card
+            id='search-bar-list'
+            style={
+                // toggle display
+                props.display ? style.container : style.hide}
+        >
             <ListGroup variant="flush">
                 <SearchBarDetails suggestion='Dapibus ac facilisis in' />
                 <SearchBarDetails suggestion='Vestibulum at eros' />
