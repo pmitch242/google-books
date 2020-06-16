@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -7,13 +7,15 @@ import SearchBarList from './SearchBarList';
 
 import './search-bar.css';
 
-export default function SearchBar() {
+export default class SerachBar extends Component {
     // states
-    const [search, setSearch] = useState('');
-    const [toggleDisplay, setToggleDisplay] = useState(false);
+    state = {
+        search: '',
+        toggleDisplay: false,
+    }
 
     // styling
-    const style = {
+    style = {
         searchBarDiv: {
 
         },
@@ -37,67 +39,70 @@ export default function SearchBar() {
     }
 
     // functin to handle form change
-    const handleChange = (event) => {
-        const value = event.target.value;
-        setSearch(value);
+    handleChange = (event) => {
+        const search = event.target.value;
+        this.setState({
+            search
+        })
 
-        if (value.length > 2){
-            setToggleDisplay(true)
-        }
-        else setToggleDisplay(false);
+        search.length > 2 ?
+            this.setState({ toggleDisplay: true })
+            :
+            this.setState({ toggleDisplay: false })
     }
 
     // functin to handle form submit
-    const handleSubmit = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
-        console.log(search);
+        console.log(this.state.search);
     }
 
     // functin to add hover effect to search-bar when input is in focus
-    const focusSearchBar = () => {
+    focusSearchBar = () => {
         const searchBar = document.querySelector('#search-bar-form');
         searchBar.setAttribute('class', 'search-bar-form-focus');
     }
 
     // functin to remove hover effect from search-bar when input is not in focus
-    const blurSearchBar = () => {
+    blurSearchBar = () => {
         const searchBar = document.querySelector('#search-bar-form');
-        console.log('out of focus');
         searchBar.removeAttribute('class', 'search-bar-form-focus');
         searchBar.setAttribute('class', 'search-bar-form');
-        setToggleDisplay(false)
+        this.setState({ toggleDisplay: false });
     }
+    render() {
+        return (
 
-    return (
+            <div className='search-bar'>
+                <form
+                    style={this.style.searchBar}
+                    id='search-bar-form'
+                    className='search-bar-form '
+                    onSubmit={this.handleSubmit}
+                >
+                    <input
+                        type="text"
+                        id="search-input"
+                        name="search-input"
+                        placeholder='Search by author, title...'
+                        onChange={this.handleChange}
+                        onFocus={this.focusSearchBar}
+                        onBlur={this.blurSearchBar}
+                        style={this.style.searchBarInput}
+                        className={this.toggleDisplay ? 'search-active' : 'search-inactive'}
+                    />
 
-        <div className='search-bar'>
-            <form
-                style={style.searchBar}
-                id='search-bar-form'
-                className='search-bar-form '
-                onSubmit={handleSubmit}
-            >
-                <input
-                    type="text"
-                    id="search-input"
-                    name="search-input"
-                    placeholder='Search by author, title...'
-                    onChange={handleChange}
-                    onFocus={focusSearchBar}
-                    onBlur={blurSearchBar}
-                    style={style.searchBarInput}
-                    className={toggleDisplay ? 'search-active' : 'search-inactive'}
-                />
+                    <FontAwesomeIcon
+                        icon={faSearch}
+                        style={this.style.icon}
+                        className='search-bar-icon'
+                        onClick={this.handleSubmit}
+                    />
 
-                <FontAwesomeIcon
-                    icon={faSearch}
-                    style={style.icon}
-                    className='search-bar-icon'
-                    onClick={handleSubmit}
-                />
+                    <SearchBarList display={this.state.toggleDisplay} />
+                </form>
+            </div>
+        )
 
-                <SearchBarList display={toggleDisplay} />
-            </form>
-        </div>
-    )
+    }
 }
