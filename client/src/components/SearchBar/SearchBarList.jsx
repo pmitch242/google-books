@@ -2,8 +2,9 @@ import React from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 
 import SearchBarDetails from './SearchBarDetails';
+import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBarList = (props) => {
+const SearchBarList = ({ searches, display }) => {
 
     const style = {
         container: {
@@ -22,12 +23,17 @@ const SearchBarList = (props) => {
             id='search-bar-list'
             style={
                 // toggle display
-                props.display ? style.container : style.hide}
+                display ? style.container : style.hide}
         >
             <ListGroup variant="flush">
-                <SearchBarDetails suggestion='Dapibus ac facilisis in' />
-                <SearchBarDetails suggestion='Vestibulum at eros' />
-                <SearchBarDetails suggestion='Dapibus ac facilisis in' />
+                {searches && searches.map(search => {
+                    return (
+                        <SearchBarDetails
+                            search={search}
+                            key={search.id}
+                        />
+                    )
+                })}
             </ListGroup>
         </Card>
     )

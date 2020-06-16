@@ -1,5 +1,5 @@
 const initState = {
-    searchHistory: [
+    searches: [
         {id: '1', search: '50 shades of grey'},
         {id: '2', search: 'so you want to talk about race'},
         {id: '3', search: 'between the world and me'},

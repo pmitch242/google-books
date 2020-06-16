@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -7,7 +9,7 @@ import SearchBarList from './SearchBarList';
 
 import './search-bar.css';
 
-export default class SerachBar extends Component {
+class SerachBar extends Component {
     // states
     state = {
         search: '',
@@ -53,7 +55,7 @@ export default class SerachBar extends Component {
         event.preventDefault();
         console.log(this.state.search);
         // clear state
-        this.setState({search: '', toggleDisplay: false})
+        this.setState({ search: '', toggleDisplay: false })
     }
 
     // functin to add hover effect to search-bar when input is in focus
@@ -70,6 +72,9 @@ export default class SerachBar extends Component {
         this.setState({ toggleDisplay: false });
     }
     render() {
+        console.log(this.props)
+        const { searches } = this.props;
+
         return (
 
             <div className='search-bar'>
@@ -99,10 +104,20 @@ export default class SerachBar extends Component {
                         onClick={this.handleSubmit}
                     />
 
-                    <SearchBarList display={this.state.toggleDisplay} />
+                    <SearchBarList
+                        display={this.state.toggleDisplay}
+                        searches={searches}
+                    />
                 </form>
             </div>
         )
-
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        searches: state.search.searches
+    }
+}
+
+export default connect(mapStateToProps)(SerachBar);
