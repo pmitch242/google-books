@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import './search-bar.css';
 
 
-const SearchBarDetails = ({search}) => {
+const SearchBarDetails = ({ search, handleSelect }) => {
 
     const style = {
         backgroundColor: 'transparent',
@@ -14,7 +14,11 @@ const SearchBarDetails = ({search}) => {
     }
 
     return (
-        <ListGroup.Item className='search-list-item' style={style}>
+        <ListGroup.Item
+            className='search-list-item'
+            style={style}
+            onClick={() => handleSelect(search.search)}
+        >
             {search.search}
         </ListGroup.Item>
     )

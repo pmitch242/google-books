@@ -4,7 +4,7 @@ import { Card, ListGroup } from 'react-bootstrap';
 import SearchBarDetails from './SearchBarDetails';
 import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 
-const SearchBarList = ({ searches, display }) => {
+const SearchBarList = ({ searches, display, handleSelect }) => {
 
     const style = {
         container: {
@@ -31,6 +31,7 @@ const SearchBarList = ({ searches, display }) => {
                         <SearchBarDetails
                             search={search}
                             key={search.id}
+                            handleSelect={handleSelect}
                         />
                     )
                 })}

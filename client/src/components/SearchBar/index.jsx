@@ -44,7 +44,7 @@ class SerachBar extends Component {
             search
         })
 
-        search.length > 2 ?
+        search.length >= 1 ?
             this.setState({ toggleDisplay: true })
             :
             this.setState({ toggleDisplay: false })
@@ -58,6 +58,11 @@ class SerachBar extends Component {
         this.setState({ search: '', toggleDisplay: false })
     }
 
+    // function to set state to suggestion
+    handleSelect = (search) => {
+        this.setState({search})
+    }
+
     // functin to add hover effect to search-bar when input is in focus
     focusSearchBar = () => {
         const searchBar = document.querySelector('#search-bar-form');
@@ -69,10 +74,8 @@ class SerachBar extends Component {
         const searchBar = document.querySelector('#search-bar-form');
         searchBar.removeAttribute('class', 'search-bar-form-focus');
         searchBar.setAttribute('class', 'search-bar-form');
-        this.setState({ toggleDisplay: false });
     }
     render() {
-        console.log(this.props)
         const { searches } = this.props;
 
         return (
@@ -107,6 +110,7 @@ class SerachBar extends Component {
                     <SearchBarList
                         display={this.state.toggleDisplay}
                         searches={searches}
+                        handleSelect = {this.handleSelect}
                     />
                 </form>
             </div>
