@@ -16,9 +16,6 @@ export default class SerachBar extends Component {
 
     // styling
     style = {
-        searchBarDiv: {
-
-        },
         searchBar: {
             border: 'none',
             borderRadius: '20px',
@@ -55,6 +52,8 @@ export default class SerachBar extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state.search);
+        // clear state
+        this.setState({search: '', toggleDisplay: false})
     }
 
     // functin to add hover effect to search-bar when input is in focus
@@ -84,6 +83,7 @@ export default class SerachBar extends Component {
                         type="text"
                         id="search-input"
                         name="search-input"
+                        value={this.state.search}
                         placeholder='Search by author, title...'
                         onChange={this.handleChange}
                         onFocus={this.focusSearchBar}
