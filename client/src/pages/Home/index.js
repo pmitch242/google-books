@@ -62,7 +62,7 @@ class Search extends Component {
         // })
 
         return (
-            <div style={this.style} className='dashboard'>
+            <div style={this.style} className='home'>
                 <ShelfPreview />
                 <PopularPreview />
             </div>

@@ -2,11 +2,15 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 
-import Home from './pages/Home';
-import Shelf from './pages/Shelf';
+// components
+import SearchBar from './components/SearchBar';
+import BottomNav from './components/BottomNav';
 import ProjectDetails from './components/BookDetails';
 
-import SearchBar from './components/SearchBar';
+// pages
+import Home from './pages/Home';
+import Shelf from './pages/Shelf';
+import Search from './pages/Search'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,7 +23,9 @@ function App() {
         <Switch>
           <Route exact path={['/', '/home']} component={ Home } />
 
-          <Route exact path={['/shelf']} component={ Shelf }/>
+          <Route exact path={'/shelf'} component={ Shelf }/>
+          
+          <Route exact path={'/search'} component={ Search }/>
 
           <Route path={['/book/:id']} component={ ProjectDetails } />
 
@@ -28,6 +34,7 @@ function App() {
           </Route>
         </Switch>
 
+        <BottomNav />
       </Container>
     </Router>
   )
