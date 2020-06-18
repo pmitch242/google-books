@@ -18,6 +18,12 @@ body{
     overflow-x: auto;
 }
 
+.no-ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
 .nowrap{
     white-space: nowrap;
 }
