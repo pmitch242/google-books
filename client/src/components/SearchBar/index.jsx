@@ -70,7 +70,6 @@ class SearchBar extends Component {
 
     render() {
         const { searches } = this.props;
-
         return (
 
             <div className='search-bar'>
