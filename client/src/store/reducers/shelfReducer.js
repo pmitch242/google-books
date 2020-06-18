@@ -1,4 +1,6 @@
-const initState = {}
+const initState = {
+    shelf: []
+}
 
 const shelfReducer = (state = initState, action) => {
     return state;

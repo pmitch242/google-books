@@ -5,7 +5,8 @@ const initState = {
         {id: '3', search: 'between the world and me'},
         {id: '4', search: 'monopoly'},
         {id: '5', search: 'renee'},
-    ]
+    ],
+    searchResults: []
 }
 
 const searchReducer = (state = initState, action) => {
