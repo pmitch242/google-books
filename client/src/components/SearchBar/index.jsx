@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom'
+
 import { connect } from 'react-redux';
 
 
@@ -60,7 +62,7 @@ class SerachBar extends Component {
 
     // function to set state to suggestion
     handleSelect = (search) => {
-        this.setState({search})
+        this.setState({ search })
     }
 
     // functin to add hover effect to search-bar when input is in focus
@@ -81,38 +83,43 @@ class SerachBar extends Component {
         return (
 
             <div className='search-bar'>
-                <form
-                    style={this.style.searchBar}
-                    id='search-bar-form'
-                    className='search-bar-form '
-                    onSubmit={this.handleSubmit}
-                >
-                    <input
-                        type="text"
-                        id="search-input"
-                        name="search-input"
-                        value={this.state.search}
-                        placeholder='Search by author, title...'
-                        onChange={this.handleChange}
-                        onFocus={this.focusSearchBar}
-                        onBlur={this.blurSearchBar}
-                        style={this.style.searchBarInput}
-                        className={this.toggleDisplay ? 'search-active' : 'search-inactive'}
-                    />
+                <NavLink to='/search'>
 
-                    <FontAwesomeIcon
-                        icon={faSearch}
-                        style={this.style.icon}
-                        className='search-bar-icon'
-                        onClick={this.handleSubmit}
-                    />
+                    <form
+                        style={this.style.searchBar}
+                        id='search-bar-form'
+                        className='search-bar-form '
+                        onSubmit={this.handleSubmit}
+                    >
 
-                    <SearchBarList
-                        display={this.state.toggleDisplay}
-                        searches={searches}
-                        handleSelect = {this.handleSelect}
-                    />
-                </form>
+                        <input
+                            type="text"
+                            id="search-input"
+                            name="search-input"
+                            value={this.state.search}
+                            placeholder='Search by author, title...'
+                            onChange={this.handleChange}
+                            onFocus={this.focusSearchBar}
+                            onBlur={this.blurSearchBar}
+                            style={this.style.searchBarInput}
+                            className={this.toggleDisplay ? 'search-active' : 'search-inactive'}
+                        />
+
+                        <FontAwesomeIcon
+                            icon={faSearch}
+                            style={this.style.icon}
+                            className='search-bar-icon'
+                            onClick={this.handleSubmit}
+                        />
+
+                        <SearchBarList
+                            display={this.state.toggleDisplay}
+                            searches={searches}
+                            handleSelect={this.handleSelect}
+                        />
+                    </form>
+                </NavLink>
+
             </div>
         )
     }
