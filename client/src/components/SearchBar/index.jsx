@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import SearchBarList from './SearchBarList';
 
 import './search-bar.css';
 
-class SerachBar extends Component {
+class SearchBar extends Component {
     // states
     state = {
         search: '',
@@ -20,20 +20,20 @@ class SerachBar extends Component {
 
     // styling
     style = {
-        searchBar: {
-            border: 'none',
-            borderRadius: '20px',
-            backgroundColor: '#f3f5f9',
-            padding: '15px',
-        },
         searchBarInput: {
             border: 'none',
             backgroundColor: 'transparent',
-            width: '92%',
+            width: '85%',
         },
         icon: {
             fontSize: '20px',
-            float: 'right',
+            float: 'left',
+            color: '#1a4cb1',
+            clear: 'both',
+            marginRight: '15px',
+        },
+        deleteIcon: {
+            fontSize: '22px',
             color: '#1a4cb1',
             clear: 'both',
         },
@@ -65,70 +65,56 @@ class SerachBar extends Component {
         this.setState({ search })
     }
 
-    // functin to add hover effect to search-bar when input is in focus
-    focusSearchBar = () => {
-        const searchBar = document.querySelector('#search-bar-form');
-        searchBar.setAttribute('class', 'search-bar-form-focus');
-    }
-
-    // functin to remove hover effect from search-bar when input is not in focus
-    blurSearchBar = () => {
-        const searchBar = document.querySelector('#search-bar-form');
-        searchBar.removeAttribute('class', 'search-bar-form-focus');
-        searchBar.setAttribute('class', 'search-bar-form');
-    }
     render() {
         const { searches } = this.props;
 
         return (
 
             <div className='search-bar'>
-                <NavLink to='/search'>
+                <form
+                    id='search-bar-form'
+                    className='search-bar-form'
+                    onSubmit={this.handleSubmit}
+                >
+                    <FontAwesomeIcon
+                        icon={faSearch}
+                        style={this.style.icon}
+                        className='search-bar-icon'
+                    />
 
-                    <form
-                        style={this.style.searchBar}
-                        id='search-bar-form'
-                        className='search-bar-form '
-                        onSubmit={this.handleSubmit}
-                    >
+                    <FontAwesomeIcon
+                        icon={faArrowLeft}
+                        style={this.style.icon}
+                        className='search-bar-back-icon'
+                    />
 
-                        <input
-                            type="text"
-                            id="search-input"
-                            name="search-input"
-                            value={this.state.search}
-                            placeholder='Search by author, title...'
-                            onChange={this.handleChange}
-                            onFocus={this.focusSearchBar}
-                            onBlur={this.blurSearchBar}
-                            style={this.style.searchBarInput}
-                            className={this.toggleDisplay ? 'search-active' : 'search-inactive'}
-                        />
+                    <input
+                        type="text"
+                        id="search-input"
+                        name="search-input"
+                        value={this.state.search}
+                        placeholder='Search by author, title...'
+                        onChange={this.handleChange}
+                        style={this.style.searchBarInput}
+                        className={this.toggleDisplay ? 'search-active' : 'search-inactive'}
+                    />
 
-                        <FontAwesomeIcon
-                            icon={faSearch}
-                            style={this.style.icon}
-                            className='search-bar-icon'
-                            onClick={this.handleSubmit}
-                        />
-
-                        <SearchBarList
-                            display={this.state.toggleDisplay}
-                            searches={searches}
-                            handleSelect={this.handleSelect}
-                        />
-                    </form>
-                </NavLink>
+                    <FontAwesomeIcon
+                        icon={faTimes}
+                        style={this.style.deleteIcon}
+                        className={this.state.toggleDisplay ? 'search-bar-delete-icon show' : 'search-bar-delete-icon'}
+                    />
+                </form>
 
             </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         searches: state.search.searches
     }
 }
 
-export default connect(mapStateToProps)(SerachBar);
+export default connect(mapStateToProps)(SearchBar);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 
 // components
@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Container style={{ marginBottom: '35px', padding: '15px' }}>
-        <SearchBar />
+        <NavLink className='no-a' to='./search'><SearchBar /></NavLink>
 
         <Switch>
           <Route exact path={'/'} component={ Home } />
