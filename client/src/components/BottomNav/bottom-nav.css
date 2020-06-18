@@ -6,10 +6,12 @@
 .nav-links{
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
-    font-family: "Noto Serif", serif;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
 }
 
 .nav-links a{
@@ -35,17 +37,14 @@
 }
 
 .nav-links .active span{
-    margin-left: 20px;
+    margin-left: 10px;
     display: block;
 }
 
-/* .nav-links .active .nav-icon{
-    opacity: .8;
-    color: #1a4cb1!important;
-    font-size: 30px;
-    margin-right: 10px;
-} */
+.nav-links .active .nav-icon{
+    font-size: 28px;
+}
 
 .nav-icon{
-    font-size: 30px;
+    font-size: 25px;
 }
