@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import PopularPreview from '../../components/PopularPreview';
+import PopularPreview from '../../components/DiscoverPreview';
 import ShelfPreview from '../../components/ShelfPreview';
 import API from '../../utils/API';
 

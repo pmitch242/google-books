@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import {  } from 'react-bootstrap';
+import { } from 'react-bootstrap';
 import { connect } from 'react-redux';
+
+import BookCardList from '../../components/DiscoverPreview/BooksCardList';
 
 class Search extends Component {
     render() {
         const { searchResults } = this.props;
-        // console.log(searchResults);
+        console.log(searchResults);
 
-        return(
+        return (
             <div className='search'>
-                <span>results</span>
+                <BookCardList books={ searchResults }/>
             </div>
         )
     }

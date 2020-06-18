@@ -8,7 +8,7 @@ import ImageCard from './ImageCard';
 
 import './cards.css';
 
-const DetailedCard = (props) => {
+const DetailedCard = ({book}) => {
     const style = {
         container: {
             backgroundColor: '#f3f5f9',
@@ -37,21 +37,20 @@ const DetailedCard = (props) => {
             fotSize: 'larger',
         },
     }
-
     return (
         <Media style={style.container} className='detailed-card'>
 
             <ImageCard
-                title={props.title}
-                image={props.image}
+                title={book.title}
+                image={book.imageLinks.thumbnail}
             />
 
             <Media.Body style={{ height: 'min-content', margin: 'auto' }}>
                 <FontAwesomeIcon icon={heart} style={style.icon} />
-                <h5 style={style.h5}>{props.title}</h5>
-                <h6 style={style.h6}>{props.author}</h6>
+                <h5 style={style.h5}>{book.title}</h5>
+                <h6 style={style.h6}>{book.author}</h6>
                 <p style={style.p}>
-                    {props.description} 
+                    {book.description} 
                 </p>
             </Media.Body>
         </Media>
