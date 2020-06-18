@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
-      <Container style={{ padding: '15px' }}>
+      <Container style={{ marginBottom: '35px', padding: '15px' }}>
         <SearchBar />
 
         <Switch>
