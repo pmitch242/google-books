@@ -24,13 +24,16 @@ class SearchBar extends Component {
             border: 'none',
             backgroundColor: 'transparent',
             width: '85%',
+            paddingRight: '10px',
+            paddingLeft: '1px',
+            fontSize: '1rem',
         },
         icon: {
             fontSize: '20px',
             float: 'left',
             color: '#1a4cb1',
             clear: 'both',
-            marginRight: '15px',
+            marginRight: '10px',
         },
         deleteIcon: {
             fontSize: '22px',
