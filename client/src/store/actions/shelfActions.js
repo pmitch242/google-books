@@ -7,3 +7,13 @@ export const addBook = (book) =>{
         })
     }
 }
+
+export const deleteBook = (book) =>{
+    return(dispatch, getState) =>{
+        // make async call to database
+        dispatch({
+            type: 'DELETE_BOOK',
+            book
+        })
+    }
+}

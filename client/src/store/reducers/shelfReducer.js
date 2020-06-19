@@ -3,7 +3,15 @@ const initState = {
 }
 
 const shelfReducer = (state = initState, action) => {
-    return state;
+    switch (action.type) {
+        case 'ADD_BOOK':
+            console.log('saved book', action.book);
+            return state;
+        case 'DELETE_BOOK':
+            console.log('deleted book', action.book);
+            return state;
+        default: return state
+    }
 }
 
 export default shelfReducer;
