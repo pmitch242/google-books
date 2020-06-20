@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
-
 import { connect } from 'react-redux';
 
+import { fetchBooks } from '../../store/actions/searchActions'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
-
-import SearchBarList from './SearchBarList';
 
 import './search-bar.css';
 
@@ -58,7 +56,7 @@ class SearchBar extends Component {
     // functin to handle form submit
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.search);
+        this.props.fetchBooks(this.state.search);
         // clear state
         this.setState({ search: '', toggleDisplay: false })
     }
@@ -70,6 +68,7 @@ class SearchBar extends Component {
 
     render() {
         const { searches } = this.props;
+        
         return (
 
             <div className='search-bar'>
@@ -113,10 +112,11 @@ class SearchBar extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+
+const mapDispatchToProps = (dispatch) => {
     return {
-        searches: state.search.searches
+        fetchBooks: (search) => dispatch(fetchBooks(search))
     }
 }
 
-export default connect(mapStateToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

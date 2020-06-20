@@ -6,12 +6,21 @@ import BookCardList from '../../components/DiscoverPreview/BooksCardList';
 
 class Search extends Component {
     render() {
-        const { searchResults } = this.props;
-        console.log(searchResults);
+        const { searchData } = this.props;
+        console.log(searchData);
 
         return (
             <div className='search'>
-                <BookCardList books={ searchResults }/>
+                {searchData.loading ? (
+                    <h1>Loading</h1>
+                ) : (
+                        searchData.error ? (
+                            <h2>{searchData.error}</h2>
+                        ) : (
+                                <BookCardList books={searchData.books} />
+                            )
+)
+                }
             </div>
         )
     }
@@ -19,8 +28,12 @@ class Search extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        searchResults: state.search.searchResults
+        searchData: state.search
     }
+}
+
+const mapDispatchToProps = () => {
+
 }
 
 export default connect(mapStateToProps)(Search);
